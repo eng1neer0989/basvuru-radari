@@ -2,8 +2,6 @@ venv/
 __pycache__/
 *.pyc
 
-basvuru_radari.db
-
 get_chat_id.py
 telegram_test.py
 test_database.py
