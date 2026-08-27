@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -6,8 +7,8 @@ from database import veritabani_olustur, duyuru_var_mi, duyuru_ekle
 
 
 # Telegram bilgileri
-BOT_TOKEN = "8848924353:AAGmZaW9EYd9numHPSm9mWMNk-zMxskGP7Y"
-CHAT_ID = "8608152469"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 
 # Telegram'a bildirim gönder
