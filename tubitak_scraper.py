@@ -4,8 +4,10 @@ from urllib.parse import urljoin
 
 from database import veritabani_olustur, duyuru_var_mi, duyuru_ekle
 
-BOT_TOKEN = "8848924353:AAGmZaW9EYd9numHPSm9mWMNk-zMxskGP7Y"
-CHAT_ID = "8608152469"
+import os
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
 
 ANAHTAR_KELIMELER = [
     "başvuru",
