@@ -1,10 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import os
 
 from database import veritabani_olustur, duyuru_var_mi, duyuru_ekle
-
-import os
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
