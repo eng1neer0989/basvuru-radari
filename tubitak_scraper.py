@@ -5,8 +5,6 @@ import os
 
 from database import veritabani_olustur, duyuru_var_mi, duyuru_ekle
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-CHAT_ID = os.environ.get("CHAT_ID")
 
 ANAHTAR_KELIMELER = [
     "başvuru",
@@ -28,8 +26,7 @@ ANAHTAR_KELIMELER = [
 ]
 
 
-def telegram_bildirim_gonder(mesaj):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
 
     data = {
         "chat_id": CHAT_ID,

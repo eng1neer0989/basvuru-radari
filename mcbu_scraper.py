@@ -7,13 +7,6 @@ from database import veritabani_olustur, duyuru_var_mi, duyuru_ekle
 
 
 # Telegram bilgileri
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
-
-
-# Telegram'a bildirim gönder
-def telegram_bildirim_gonder(mesaj):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     data = {
         "chat_id": CHAT_ID,

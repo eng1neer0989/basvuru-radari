@@ -11,12 +11,22 @@ from database import (
 
 URL = "http://erasmus.mcbu.edu.tr/"
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-CHAT_ID = os.environ.get("CHAT_ID")
+ANAHTAR_KELIMELER = [
+    "başvuru",
+    "burs",
+    "staj",
+    "sınav",
+    "hareketliliği",
+    "hareketlilik",
+    "sonuç",
+    "ilan",
+    "çağrı",
+    "başladı",
+    "açıldı",
+    "uzatıldı",
+    "tarih"
+]
 
-
-def telegram_bildirim_gonder(mesaj):
-    telegram_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
     data = {
         "chat_id": CHAT_ID,
@@ -55,6 +65,12 @@ for link in soup.find_all("a", href=True):
 
     if not text or len(text) <= 10:
         continue
+    if not any(
+    kelime.lower() in text.lower()
+    for kelime in ANAHTAR_KELIMELER
+):
+    print("🚫 İlgisiz duyuru:", text)
+    continue
 
     tam_url = urljoin(URL, href)
 
